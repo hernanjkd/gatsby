@@ -38,3 +38,101 @@ exports.createPages = async (params) =>
     await createEntityPagesfromYml('Job', params) &&
     await addAdditionalRedirects(params) &&
     true;
+
+
+const createPagesfromYml = async ({ graphql, actions }) => {
+    const { createPage, createRedirect } = actions;
+    const result = await graphql(`
+        {
+            allPageYaml {
+            edges {
+                node {
+                meta_info {
+                    slug
+                    redirects
+                }
+                fields{
+                    lang
+                    slug
+                    file_name
+                    template
+                    type
+                    pagePath
+                    filePath
+                }
+                }
+            }
+            }
+        }`
+    );
+    if (result.errors) throw new Error(result.errors);
+
+    const translations = buildTranslations(result.data[`allPageYaml`]);
+    result.data[`allPageYaml`].edges.forEach(({ node }) => {
+        const _targetPath = node.fields.slug === "index" ? "/" : node.fields.pagePath;
+        console.log(`Creating page ${node.fields.slug === "index" ? "/" : node.fields.pagePath}`);
+        createPage({
+            path: _targetPath,
+            component: path.resolve(`./src/templates/${node.fields.template}.js`),
+            context: {
+                ...node.fields,
+                translations: translations[node.fields.template]
+            }
+        });
+
+        if (node.fields.lang === "us") {
+            console.log(`Redirect from /${node.fields.slug} to ${_targetPath}`);
+            createRedirect({
+                fromPath: "/" + node.fields.slug,
+                toPath: _targetPath,
+                redirectInBrowser: true,
+                isPermanent: true
+            });
+
+            console.log(`Redirect from /en/${node.fields.slug} to ${_targetPath}`);
+            createRedirect({
+                fromPath: "/en/" + node.fields.slug,
+                toPath: _targetPath,
+                redirectInBrowser: true,
+                isPermanent: true
+            });
+
+            if (node.fields.slug === "index") {
+                console.log("Redirect from /en to " + _targetPath);
+                createRedirect({
+                    fromPath: "/en",
+                    toPath: _targetPath,
+                    redirectInBrowser: true,
+                    isPermanent: true
+                });
+            }
+        }
+        if (node.fields.lang === "es") {
+            console.log(`Redirect from /${node.fields.slug} to ${_targetPath}`);
+            createRedirect({
+                fromPath: "/" + node.fields.slug,
+                toPath: _targetPath,
+                redirectInBrowser: true,
+                isPermanent: true
+            });
+
+        }
+
+        if (node.meta_info && node.meta_info.redirects) {
+            node.meta_info.redirects.forEach(path => {
+                if (typeof (path) !== "string") {
+                    throw new Error(`The path in ${node.meta_info.slug} its not a string: ${path}`);
+                }
+                path = path[0] !== '/' ? '/' + path : path;
+                createRedirect({
+                    fromPath: path,
+                    toPath: _targetPath,
+                    redirectInBrowser: true,
+                    isPermanent: true
+                });
+            })
+        }
+    });
+
+    return true;
+};
