@@ -29,3 +29,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
         }
     }
 };
+
+exports.createPages = async (params) =>
+    await createBlog(params) &&
+    await createPagesfromYml(params) &&
+    await createEntityPagesfromYml('Course', params) &&
+    await createEntityPagesfromYml('Location', params) &&
+    await createEntityPagesfromYml('Job', params) &&
+    await addAdditionalRedirects(params) &&
+    true;
