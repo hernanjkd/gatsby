@@ -126,6 +126,19 @@ exports.createPages = params => console.log('pages', params);
 //                     isPermanent: true
 //                 });
 //             })
+//         if (node.meta_info && node.meta_info.redirects) {
+//             node.meta_info.redirects.forEach(path => {
+//                 if (typeof (path) !== "string") {
+//                     throw new Error(`The path in ${node.meta_info.slug} its not a string: ${path}`);
+//                 }
+//                 path = path[0] !== '/' ? '/' + path : path;
+//                 createRedirect({
+//                     fromPath: path,
+//                     toPath: _targetPath,
+//                     redirectInBrowser: true,
+//                     isPermanent: true
+//                 });
+//             })
 //         }
 //     });
 
