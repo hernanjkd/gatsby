@@ -3,24 +3,27 @@ const fs = require('fs');
 const YAML = require('yaml');
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-exports.onCreateNode = ({ node, getNode, actions: { createNodeField } }) => {
-    const types = ['DataYaml', 'Site'];
-    if (types.includes(node.internal.type)) {
-        if (node.internal.type === 'DataYaml')
-            createNodeField({ node, name: `xxx`, value: 'crystal' });
-        // const url = createFilePath({ node, getNode })
+exports.createPages = params => console.log('pages', params);
 
-        createNodeField({ node, name: `hernan`, value: 'garcia' });
-        // createNodeField({ node, name: `slug`, value: meta.slug });
-        // createNodeField({ node, name: `file_name`, value: meta.file_name });
-        // createNodeField({ node, name: `template`, value: meta.template });
-        // createNodeField({ node, name: `type`, value: meta.type });
-        // createNodeField({ node, name: `pagePath`, value: meta.pagePath });
-        // createNodeField({ node, name: `filePath`, value: url });
-        // createNodeField({ node, name: `ctas`, value: ctas });
+// exports.onCreateNode = ({ node, getNode, actions: { createNodeField } }) => {
 
-    }
-};
+//     if (node.internal.type === 'DataYaml') {
+//         createNodeField({ node, name: `xxx`, value: 'crystal' });
+//         const url = createFilePath({ node, getNode })
+
+//         createNodeField({ node, name: `hernan`, value: 'garcia' });
+//         createNodeField({ node, name: `url`, value: url });
+
+//         // createNodeField({ node, name: `slug`, value: meta.slug });
+//         // createNodeField({ node, name: `file_name`, value: meta.file_name });
+//         // createNodeField({ node, name: `template`, value: meta.template });
+//         // createNodeField({ node, name: `type`, value: meta.type });
+//         // createNodeField({ node, name: `pagePath`, value: meta.pagePath });
+//         // createNodeField({ node, name: `filePath`, value: url });
+//         // createNodeField({ node, name: `ctas`, value: ctas });
+
+//     }
+// };
 
 // exports.createPages = async (params) =>
 //     await createBlog(params) &&
