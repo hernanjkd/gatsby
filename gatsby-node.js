@@ -34,6 +34,12 @@ exports.createPages = async (params) =>
     await addAdditionalRedirects(params) &&
     true;
 
+/*
+ *
+ *  why is graphql exported at the end of the templates?
+ *  show me an example of a markdown data file
+ * 
+ */
 
 const createPagesfromYml = async ({ graphql, actions }) => {
     const { createPage, createRedirect } = actions;
