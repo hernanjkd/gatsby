@@ -37,7 +37,6 @@ exports.createPages = async (params) =>
 /*
  *
  *  why is graphql exported at the end of the templates?
- *  show me an example of a markdown data file
  * 
  */
 
