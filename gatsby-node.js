@@ -3,20 +3,10 @@ const fs = require('fs');
 const YAML = require('yaml');
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-exports.createPages = async (params) =>
-    await createBlog(params) &&
-    await createPagesfromYml(params) &&
-    await createEntityPagesfromYml('Course', params) &&
-    await createEntityPagesfromYml('Location', params) &&
-    await createEntityPagesfromYml('Job', params) &&
-    await addAdditionalRedirects(params) &&
-    true;
+exports.createPages = async ({ graphql, actions }) => {
+    const { createPage, createRedirect } = actions
+}
 
-/*
- *
- *  why is graphql exported at the end of the templates?
- * 
- */
 
 const createPagesfromYml = async ({ graphql, actions }) => {
     const { createPage, createRedirect } = actions;

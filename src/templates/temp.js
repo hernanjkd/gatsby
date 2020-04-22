@@ -220,67 +220,6 @@ export const query = graphql`
         }
       }
     }
-    allCredentialsYaml(filter: {lang: {eq: $lang}}) {
-        edges {
-          node {
-            lang
-            credentials {
-              title
-              slug
-              value
-              symbol
-              symbol_position
-            }
-          }
-        }
-      }
-      allPartnerYaml(filter: {lang: {eq: $lang}}) {
-        edges {
-            node {
-              lang
-              partners {
-                images {
-                  name
-                  slug
-                  image
-                  featured
-                }
-                tagline
-                sub_heading
-              }
-              coding {
-                images {
-                  name
-                  slug
-                  image
-                  featured
-                }
-                tagline
-                sub_heading
-              }
-              influencers {
-                images {
-                  name
-                  slug
-                  image
-                  featured
-                }
-                tagline
-                sub_heading
-              }
-              financials {
-                images {
-                  name
-                  slug
-                  image
-                  featured
-                }
-                tagline
-                sub_heading
-              }
-            }
-          }
-        }
   }
 `;
 export default BaseRender(Pricing);
