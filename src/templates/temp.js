@@ -183,7 +183,7 @@ const Pricing = (props) => {
 };
 export const query = graphql`
   query PricingQuery($file_name: String!) {
-    allPageYaml(filter: { fields: { file_name: { eq: $file_name } }}) {
+    allDataYaml(filter: { fields: { file_name: { eq: $file_name } }}) {
       edges{
         node{
             meta_info{
