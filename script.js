@@ -1,12 +1,11 @@
 const fetch = require(`node-fetch`)
 
-function search() {
-    fetch(`https://assets.breatheco.de/apis/fake/zips.php`)
+async function search() {
+    return await fetch(`https://assets.breatheco.de/apis/fake/zips.php`)
         .then(response => {
             return response.json();
         }).then((jsonResponse) => {
-            setState({ businesses: jsonResponse )
-        }
+            return jsonResponse
             // if (jsonResponse.businesses) {
             // return jsonResponse.businesses.map(business => {
             //     console.log(business)
@@ -28,4 +27,4 @@ function search() {
 }
 
 
-search().then(data => data)
+search().then(data => console.log(data))
