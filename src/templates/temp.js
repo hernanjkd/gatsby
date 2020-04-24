@@ -47,18 +47,7 @@ const Pricing = (props) => {
                     <Column size="1" />
                     <Column size="11" >
                         <Row>
-                            <Column size="1" />
-                            <Column size="10">
-                                <Row>
-                                    <Column size="5" height="300px">
-                                        <RoundImage url={yml.intro.image} height="400px" bsize="contain" />
-                                    </Column>
-                                    <Column size="4">
-                                        <Divider height="100px" />
-                                        <H5 uppercase align="left" fontSize="20px" fontHeight="30px">{yml.intro.content}</H5>
-                                    </Column>
-                                </Row>
-                            </Column>
+
                         </Row>
                     </Column>
                 </Row>
