@@ -167,16 +167,7 @@ const Pricing = (props) => {
                 </Row>
                 <Divider height="100px" />
             </Wrapper>
-            <Wrapper
-                style="default"
-                image="no"
-                color={Colors.lightGray}
-                border="top"
-            >
-                <Divider height="20px" />
-                <WhoIsHiring source={yml.ecosystem.partners_name} lang={data.allPartnerYaml.edges} />
-                <Divider height="150px" />
-            </Wrapper>
+
 
         </ >
     )
