@@ -100,71 +100,7 @@ const Pricing = (props) => {
                     primary
                 />
                 <Divider height="30px" />
-                <Row align="center">
-                    <Modal
-                        aria-labelledby="simple-modal-title"
-                        aria-describedby="simple-modal-description"
-                        open={open}
-                        onClose={handleClose}
-                    ><div style={modalStyle} className={classes.paper}>
-                            <Row height="20%" align="center">
-                                <Column size="12" align="center"><H4>REVIEW GUIDEBOOK</H4></Column>
-                            </Row>
-                            <Row height="70%">
-                                <Column size="12">
-                                    <Row height="30%" align="center">
-                                        <Column size="11" >
-                                            <Input
-                                                type="text" className="form-control" placeholder="First name *"
-                                                onChange={(e) => setVal({ ...formData, first_name: e.target.value })}
-                                                value={formData.firstName}
-                                            />
-                                        </Column>
-                                    </Row>
-                                    <Row height="30%" align="center">
-                                        <Column size="11">
-                                            <Input type="text" className="form-control" placeholder="Last Name *"
-                                                onChange={(e) => setVal({ ...formData, last_name: e.target.value })}
-                                                value={formData.lastName}
-                                            />
-                                        </Column>
-                                    </Row>
-                                    <Row height="30%" align="center">
-                                        <Column size="11">
-                                            <Input type="email" className="form-control" placeholder="Email *"
-                                                onChange={(e) => setVal({ ...formData, email: e.target.value })}
-                                                value={formData.email}
-                                            />
-                                        </Column>
-                                    </Row>
-                                </Column>
-                            </Row>
-                            <Row height="10%" padding="5px 0 0 0" borderTop={`1px solid ${Colors.blue}`}>
 
-                                <Column size="6" customRespSize respSize="6">
-                                    <Paragraph>{formMessage}</Paragraph>
-                                </Column>
-                                <Column size="3" customRespSize respSize="3" align="right">
-                                    {
-                                        formData.first_name &&
-                                            formData.last_name &&
-                                            formData.email ?
-                                            <Button width="100%" padding=".2rem .45rem" color={Colors.blue} textColor={Colors.white}
-                                                onClick={() => {
-                                                    reviewGuidebook(formData)
-
-                                                }}>Submit</Button> : null}
-                                </Column>
-                                <Column size="3" customRespSize respSize="3" align="right">
-                                    <Button outline width="100%" padding=".2rem .45rem" color={Colors.red} textColor={Colors.white} onClick={handleClose}>Close</Button>
-                                </Column>
-                            </Row>
-
-
-                        </div>
-                    </Modal>
-                    <Button outline position="relative" width="300px" onClick={handleOpen} color={Colors.blue}>{yml.payment_guide.button_text}</Button>
-                </Row>
                 <Divider height="100px" />
             </Wrapper>
 
