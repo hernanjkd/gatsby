@@ -32,18 +32,8 @@ const Pricing = (props) => {
                 height="500px"
                 backgroundSize="cover"
             >
-                <Divider height="100px" />
-                <Title
-                    size="5"
-                    color={Colors.white}
-                    title={yml.banner.tagline}
-                    paragraph={yml.banner.sub_heading}
-                    main
-                    paragraphColor={Colors.white}
-                    fontSize="46px"
-                    textAlign="center"
 
-                />
+
             </Wrapper>
             {/* CREDENTIALS SECTION */}
             <Wrapper
