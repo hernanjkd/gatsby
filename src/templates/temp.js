@@ -204,14 +204,6 @@ export const query = graphql`
             prices{
                 heading
             }
-            payment_guide{
-                heading
-                sub_heading
-                button_text
-                button_link
-                submit_button_text
-                submit_button_link
-            }
             ecosystem{
                 heading
                 sub_heading
