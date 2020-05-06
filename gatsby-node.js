@@ -3,7 +3,11 @@ const fs = require('fs')
 const YAML = require('yaml')
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-exports.onCreateNode = ({ node }) => console.log('node', node.internal.type)
+exports.onCreateNode = ({ node, getNode }) => {
+    if (node.internal.type === 'DataYaml') {
+        console.log('URL', createFilePath({ node, getNode }))
+    }
+}
 
 // exports.createPages = async ({ graphql, actions }) => {
 //     const { createPage, createRedirect } = actions
