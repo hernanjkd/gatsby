@@ -1,0 +1,51 @@
+tables:
+  - section: STAGE
+    capacity: Capacidad 14 Pers
+    includes:
+      - Mesas 01-06
+      - 2 Moet Ice
+      - 3 Grey Goose
+      - 1 Old Parr
+      - 2 St 1796
+      - 6 Red Bull
+      - 1 LT Cranberry
+      - 10 San Pellegrino
+      - Mesonero Personalizado
+  - section: BOX VIP
+    capacity: Capacidad 12 Pers
+    includes:
+      - Mesas 07-11
+      - 2 Moet Ice
+      - 2 Grey Goose
+      - 1 Old Parr
+      - 1 St 1796
+      - 6 Red Bull
+      - 1 LT Cranberry
+      - 10 San Pellegrino
+      - Mesonero Personalizado
+  - section: ARENA Dance Floor
+    capacity: Capacidad 12 Pers
+    includes:
+      - Mesas 12-37  
+      - 3 Grey Goose
+      - 2 St 1796
+      - 6 Red Bull
+      - Cranberry
+      - 10 San Pellegrino
+  - section: 2 top
+    price: $350++
+    capacity: 2 person max
+    includes:
+      - 1 x Moet / PJ'S
+      - Full Dinner (Special Event Menu) 
+
+meta_info:
+  slug: savage
+  title: MyTitle
+  description: Our new concept where you can have dinner with friends, drinks, music and party in one place.
+  date: 09/26/2019
+  location: Juvia Miami
+  djs:
+    - Savy Fontana
+    - Olivo
+    - Viton (International)
