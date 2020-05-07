@@ -1,8 +1,8 @@
-tables:
+breakdown:
   - section: STAGE
+    tables: Mesas 01-06
     capacity: Capacidad 14 Pers
     includes:
-      - Mesas 01-06
       - 2 Moet Ice
       - 3 Grey Goose
       - 1 Old Parr
@@ -12,9 +12,9 @@ tables:
       - 10 San Pellegrino
       - Mesonero Personalizado
   - section: BOX VIP
+    tables: Mesas 07-11
     capacity: Capacidad 12 Pers
     includes:
-      - Mesas 07-11
       - 2 Moet Ice
       - 2 Grey Goose
       - 1 Old Parr
@@ -24,28 +24,23 @@ tables:
       - 10 San Pellegrino
       - Mesonero Personalizado
   - section: ARENA Dance Floor
+    tables: Mesas 12-37
     capacity: Capacidad 12 Pers
     includes:
-      - Mesas 12-37  
       - 3 Grey Goose
       - 2 St 1796
       - 6 Red Bull
       - Cranberry
       - 10 San Pellegrino
-  - section: 2 top
-    price: $350++
-    capacity: 2 person max
+  - section: COCTELERAS
+    tables: Mesas 27-41
+    capacity: Capacidad 06 Pers
     includes:
-      - 1 x Moet / PJ'S
-      - Full Dinner (Special Event Menu) 
+      - 2 St 1796
+      - 1 Prosecco Stelle & Fortuna
 
 meta_info:
-  slug: savage
-  title: MyTitle
-  description: Our new concept where you can have dinner with friends, drinks, music and party in one place.
-  date: 09/26/2019
-  location: Juvia Miami
-  djs:
-    - Savy Fontana
-    - Olivo
-    - Viton (International)
+  slug: claptone
+  title: MAGAZZINO presents CLAPTONE
+  date: FEB/28/20
+  location: JW MARRIOT, El Rosal, Caracas, VE
