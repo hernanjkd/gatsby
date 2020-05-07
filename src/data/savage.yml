@@ -1,0 +1,38 @@
+tables:
+  - stage: 8 top
+    price: $1,600++
+    person: 8 person max
+    includes:
+      - 2 x Vodka Elix / Grey Goose
+      - 2 x Moet / PJ'S
+      - Full Dinner (Special Event Menu)
+  - stage: 6 top
+    price: $1,200++
+    max: 6 person max
+    includes:
+      - 1 x Vodka Elix / Grey Goose
+      - 2 x Moet / PJ'S
+      - Full Dinner (Special Event Menu)
+  - stage: 4 top
+    price: $800++
+    max: 4 person max
+    includes:
+     - 1 x Vodka Elix / Grey Goose OR 2 x Moet / PJ'S
+     - Full Dinner (Special Event Menu)
+  - stage: 2 top
+    price: $350++
+    max: 2 person max
+    includes:
+      - 1 x Moet / PJ'S
+      - Full Dinner (Special Event Menu) 
+
+meta_info:
+  slug: savage
+  title: MyTitle
+  description: Our new concept where you can have dinner with friends, drinks, music and party in one place.
+  date: 09/26/2019
+  location: Juvia Miami
+  djs:
+    - Savy Fontana
+    - Olivo
+    - Viton (International)
