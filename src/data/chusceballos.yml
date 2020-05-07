@@ -1,0 +1,33 @@
+meta_info:
+  slug: chusceballos
+  title: CHUS + CEBALLOS
+  date: 13 MARZO 2020
+  location: HOTEL HUMBOLDT
+breakdown:
+  - section: STAGE
+    tables: Mesas 01-02
+    capacity: Capacidad 10 Pers
+    includes:
+      - 1 Moet Ice
+      - 1 Grey Goose
+      - Whisky 12 Años
+      - Mesonero Personalizado
+  - section: VIP
+    tables: Mesas 03-08
+    capacity: Capacidad 10 Pers
+    includes:
+      - 1 Moet Ice
+      - 1 Grey Goose
+      - Whisky 12 Años
+      - Mesonero Personalizado
+  - section: ARENA 1
+    tables: Mesas 09-16
+    capacity: Capacidad 08 Pers
+    includes:
+      - 1 Moet Ice
+      - 1 Grey Goose
+  - section: ARENA 2
+    tables: Mesas 17-21
+    capacity: Capacidad 04 Pers
+    includes:
+      - 1 Moet Ice

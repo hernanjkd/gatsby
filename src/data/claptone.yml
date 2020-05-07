@@ -1,3 +1,8 @@
+meta_info:
+  slug: claptone
+  title: MAGAZZINO presents CLAPTONE
+  date: FEB/28/20
+  location: JW MARRIOT, El Rosal, Caracas, VE
 breakdown:
   - section: STAGE
     tables: Mesas 01-06
@@ -38,9 +43,3 @@ breakdown:
     includes:
       - 2 St 1796
       - 1 Prosecco Stelle & Fortuna
-
-meta_info:
-  slug: claptone
-  title: MAGAZZINO presents CLAPTONE
-  date: FEB/28/20
-  location: JW MARRIOT, El Rosal, Caracas, VE
