@@ -3,55 +3,47 @@ const fs = require('fs')
 const YAML = require('yaml')
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-exports.onCreateNode = ({ node, getNode }) => {
+exports.onCreateNode = ({ node, getNode, actions: { createNodeField } }) => {
     if (node.internal.type === 'DataYaml') {
-        console.log('URL', createFilePath({ node, getNode }))
+        const url = createFilePath({ node, getNode })
+        createNodeField({ node, name: `slug`, value: url });
     }
 }
 
-// exports.createPages = async ({ graphql, actions }) => {
-//     const { createPage, createRedirect } = actions
+exports.createPages = async ({ graphql, actions: { createPage } }) => {
 
-//     const relativeFilePath = createFilePath({
-//         node,
-//         getNode,
-//         basePath: "data/faqs/",
-//     })
+    const result = await graphql(`
+        {
+            allDataYaml {
+                edges {
+                    node {
+                        meta_info {
+                            slug
+                            title
+                            description
+                        }
+                        fields {
+                            slug
+                        }
+                    }
+                }
+            }
+        }`
+    );
+    if (result.errors) throw new Error(result.errors)
 
-//     const result = await graphql(`
-//         {
-//             allPageYaml {
-//                 edges {
-//                     node {
-//                         meta_info {
-//                             slug
-//                             redirects
-//                         }
-//                         fields{
-//                             lang
-//                             slug
-//                             file_name
-//                             template
-//                             type
-//                             pagePath
-//                             filePath
-//                         }
-//                     }
-//                 }
-//             }
-//         }`
-//     );
-//     if (result.errors) throw new Error(result.errors)
+    result.data.allDataYaml.edges.forEach(({ node }) => {
+        const slug = node.fields.slug
 
-//     console.log('node', result)
+        createPage({
+            path: slug,
+            component: path.resolve(`./src/templates/club.js`),
+            context: {
+                slug: slug,
+                ...node,
+            }
+        });
+    })
 
-//     createPage({
-//         path: 'temp',
-//         component: 'src/templates/temp.js',
-//         context: {
-//             ...node.fields,
-//         }
-//     });
-
-//     return true
-// }
+    return true
+}

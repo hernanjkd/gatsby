@@ -1,10 +1,40 @@
+tables:
+  - stage: 8 top
+    price: $1,600++
+    person: 8 person max
+    includes:
+      - 2 x Vodka Elix / Grey Goose
+      - 2 x Moet / PJ'S
+      - Full Dinner (Special Event Menu)
+  - stage: 6 top
+    price: $1,200++
+    max: 6 person max
+    includes:
+      - 1 x Vodka Elix / Grey Goose
+      - 2 x Moet / PJ'S
+      - Full Dinner (Special Event Menu)
+  - stage: 4 top
+    price: $800++
+    max: 4 person max
+    includes:
+     - 1 x Vodka Elix / Grey Goose OR 2 x Moet / PJ'S
+     - Full Dinner (Special Event Menu)
+  - stage: 2 top
+    price: $350++
+    max: 2 person max
+    includes:
+      - 1 x Moet / PJ'S
+      - Full Dinner (Special Event Menu) 
+
+calling-birds:
+  - huey
+  - dewey
+  - louie
+  - fred
 meta_info:
   slug: pricing
   title: MyTitle
   description: MyDescription
-  image: null
-  keywords: []
-  redirects: []
 
 ## BANNER - HEADER
 banner:
