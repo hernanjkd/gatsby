@@ -1,35 +1,39 @@
 meta_info:
   slug: savage
   title: SAVAGE
-  description: Our new concept where you can have dinner with friends, drinks, music and party in one place.
   date: 09/26/2019
   location: Juvia Miami
+  description: Our new concept where you can have dinner with friends, drinks, music and party in one place.
   djs:
     - Savy Fontana
     - Olivo
     - Viton (International)
 breakdown:
-  - tables: 8 TOP
+  - section: ~
+    tables: 8 TOP
     capacity: 8 person max
     includes:
       - 2 x Vodka Elix / Grey Goose
       - 2 x Moet / PJ'S
       - Full Dinner (Special Event Menu)
       - "PRICE: $1,600++"
-  - tables: 6 TOP
+  - section: ~
+    tables: 6 TOP
     capacity: 6 person max
     includes:
       - 1 x Vodka Elix / Grey Goose
       - 2 x Moet / PJ'S
       - Full Dinner (Special Event Menu)
       - "PRICE: $1,200++"
-  - tables: 4 TOP
+  - section: ~
+    tables: 4 TOP
     capacity: 4 person max
     includes:
       - 1 x Vodka Elix / Grey Goose OR 2 x Moet / PJ'S
       - Full Dinner (Special Event Menu)
       - "PRICE: $800++"
-  - tables: 2 TOP
+  - section: ~
+    tables: 2 TOP
     capacity: 2 person max
     includes:
       - 1 x Moet / PJ'S
