@@ -15,6 +15,10 @@ export default ({ data: { dataYaml } }) => {
             {meta.description && (
                 <h3>{meta.description}</h3>
             )}
+
+            {meta.slug &&
+                <img src={require(`../images/${meta.slug}_layout.png`)} alt={meta.slug} />}
+
             <h2>TABLES BREAKDOWN</h2>
             {dataYaml.breakdown.map((e, i) => (
                 <>
