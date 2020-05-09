@@ -1,51 +1,54 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-export default props => {
-
-    useEffect(() => {
-        console.clear()
-        console.log('props', props)
-        console.log('pageContext', props.pageContext)
-        console.log('data', props.data)
-    }, [props])
+export default ({ data: { dataYaml } }) => {
+    const meta = dataYaml.meta_info
 
     return (
 
         <Layout>
-            <SEO title="Page two" />
-            <h1>Hi from the second page</h1>
-            <p>Welcome to page 2</p>
+            <SEO title={meta.title} />
+            <h1>{meta.title}</h1>
+            {meta.description && (
+                <h3>{meta.description}</h3>
+            )}
+            <h2>TABLES BREAKDOWN</h2>
+            {dataYaml.breakdown.map((e, i) => (
+                <>
+                    {e.section && (
+                        <div>{e.section}</div>
+                    )}
+                    <div>{e.tables}</div>
+                    <div>{e.capacity}</div>
+                    <ul>
+                        {e.includes.map(e => <li>{e}</li>)}
+                    </ul>
+                </>
+            ))}
+
         </Layout>
     )
 }
 
 export const query = graphql`
-    query PricingQuery($slug: String!) {
-        dataYaml(fields: { slug: { eq: $slug }}) {  
-            meta_info{
+    query ClubQuery($slug: String!) {
+        dataYaml(meta_info: { slug: { eq: $slug }}) {  
+            meta_info {
+                slug
                 title
+                date
+                location
                 description
+                djs
             }
-            banner{
-                tagline
-                image
-                sub_heading
-            }
-            intro{
-                image
-                content
-            }
-            prices{
-                heading
-            }
-            ecosystem{
-                heading
-                sub_heading
-                partners_name
+            breakdown {
+                section
+                tables
+                capacity
+                includes
             }
         }
     }
