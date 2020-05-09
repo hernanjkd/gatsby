@@ -9,7 +9,7 @@ export default ({ data: { dataYaml } }) => {
 
     return (
 
-        <Layout>
+        <Layout logoLink={meta.slug + `_logo.png`}>
             <SEO title={meta.title} />
             <h1>{meta.title}</h1>
             {meta.description && (

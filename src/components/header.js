@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, logoLink }) => (
   <header
     style={{
       background: `rebeccapurple`,
@@ -27,12 +27,14 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
+      {logoLink && <img src={require('../images' + logoLink)} alt={logoLink} />}
     </div>
   </header>
 )
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
+  logoLink: PropTypes.string
 }
 
 Header.defaultProps = {
