@@ -30,7 +30,7 @@ const Header = ({ siteTitle, slug, data }) => (
         </Link>
       </h1>
     </div>
-    {logoLink && <img src={require(`../images/${slug}_logo.png`)} alt={slug} />}
+    {slug && <img src={require(`../images/${slug}_logo.png`)} alt={slug} />}
   </header>
 )
 
