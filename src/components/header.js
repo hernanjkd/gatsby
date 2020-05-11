@@ -2,11 +2,12 @@ import { Link, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ({ siteTitle, logoLink, data }) => (
+const Header = ({ siteTitle, slug, data }) => (
   <header
     className="d-flex justify-content-around"
     style={{
-      background: `rebeccapurple`,
+      backgroundImage: `url(../images/${slug}_bg.png)`,
+      backgroundRepeat: `repeat`,
       marginBottom: `1.45rem`,
     }}
   >
@@ -29,7 +30,7 @@ const Header = ({ siteTitle, logoLink, data }) => (
         </Link>
       </h1>
     </div>
-    {logoLink && <img src={require('../images/' + logoLink)} alt={logoLink} />}
+    {logoLink && <img src={require(`../images/${slug}_logo.png`)} alt={slug} />}
   </header>
 )
 
