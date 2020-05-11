@@ -9,7 +9,7 @@ export default ({ data: { dataYaml } }) => {
 
     return (
 
-        <Layout logoLink={meta.slug + `_logo.png`}>
+        <Layout logoLink={meta.slug}>
             <SEO title={meta.title} />
             <h1>{meta.title}</h1>
             {meta.description && (
@@ -21,16 +21,16 @@ export default ({ data: { dataYaml } }) => {
 
             <h2>TABLES BREAKDOWN</h2>
             {dataYaml.breakdown.map((e, i) => (
-                <>
+                <div key={i}>
                     {e.section && (
                         <div>{e.section}</div>
                     )}
                     <div>{e.tables}</div>
                     <div>{e.capacity}</div>
                     <ul>
-                        {e.includes.map(e => <li>{e}</li>)}
+                        {e.includes.map((e, i) => <li key={i}>{e}</li>)}
                     </ul>
-                </>
+                </div>
             ))}
 
         </Layout>

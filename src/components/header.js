@@ -10,7 +10,7 @@ const Header = ({ siteTitle, slug, data }) => (
       backgroundRepeat: `repeat`,
       marginBottom: `1.45rem`,
     }}
-  >
+  >{data && console.log('data', data)}
     <div
       style={{
         margin: `0 auto`,
