@@ -6,11 +6,12 @@ const Header = ({ siteTitle, slug, data }) => (
   <header
     className="d-flex justify-content-around"
     style={{
-      backgroundImage: `url(../images/${slug}_bg.png)`,
-      backgroundRepeat: `repeat`,
+      // backgroundImage: `url(../images/${slug}_bg.png)`,
+      // backgroundRepeat: `repeat`,
+      background: `rebeccapurple`,
       marginBottom: `1.45rem`,
     }}
-  >{data && console.log('data', data)}
+  >
     <div
       style={{
         margin: `0 auto`,
