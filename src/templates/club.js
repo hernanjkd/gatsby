@@ -19,7 +19,7 @@ export default ({ data: { dataYaml } }) => {
             {meta.slug &&
                 <img src={require(`../images/${meta.slug}_layout.png`)} alt={meta.slug} />}
 
-            <h2>TABLES BREAKDOWN</h2>
+            <h2 className="text-danger">TABLES BREAKDOWN</h2>
             {dataYaml.breakdown.map((e, i) => (
                 <div key={i}>
                     {e.section && (
