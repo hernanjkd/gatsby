@@ -20,14 +20,18 @@ const Header = ({ siteTitle, slug }) => {
   return (
     <header
       className="d-flex justify-content-around pt-3"
+      // style={{
+      //   backgroundImage: "url(" + "https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350" + ")",
+      //   backgroundRepeat: 'repeat'
+      // }}
       style={{
-        // backgroundImage: `url(../images/${slug}_bg.png)`,
-        // backgroundRepeat: `repeat`,
-        background: `rebeccapurple`
+        backgroundImage: `url(${require(`../images/${slug}_bg.png`)})`,
+        backgroundRepeat: `repeat`
+        // background: `rebeccapurple`
       }}
     >
       <div>
-        <h1 style={{ margin: 0 }}>
+        <h5 style={{ margin: 0 }}>
           <Link
             to="/"
             style={{
@@ -37,19 +41,18 @@ const Header = ({ siteTitle, slug }) => {
           >
             {siteTitle}
           </Link>
-        </h1>
+        </h5>
       </div>
+      <img src={require(`../images/${slug}_logo.png`)} alt={slug} />
       <div>
-        {data.allDataYaml && data.allDataYaml.edges.map((node, i) => (
-          <div key={i}>
-            {true && console.log('node map', node)}
-            {/* <Link to={"/" + node.meta_info.slug}> */}
-            {node && node.meta && node.meta_info.slug}
-            {/* </Link> */}
+        {data.allDataYaml && data.allDataYaml.edges.map(({ node }, i) => (
+          <div key={i} className="text-light">
+            <Link to={"/" + node.meta_info.slug}>
+              {node.meta_info.slug}
+            </Link>
           </div>
         ))}
       </div>
-      {slug && <img src={require(`../images/${slug}_logo.png`)} alt={slug} />}
     </header>
   )
 }
