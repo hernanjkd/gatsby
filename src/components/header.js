@@ -39,6 +39,16 @@ const Header = ({ siteTitle, slug }) => {
           </Link>
         </h1>
       </div>
+      <div>
+        {data.allDataYaml && data.allDataYaml.edges.map((node, i) => (
+          <div key={i}>
+            {true && console.log('node map', node)}
+            {/* <Link to={"/" + node.meta_info.slug}> */}
+            {node && node.meta && node.meta_info.slug}
+            {/* </Link> */}
+          </div>
+        ))}
+      </div>
       {slug && <img src={require(`../images/${slug}_logo.png`)} alt={slug} />}
     </header>
   )
