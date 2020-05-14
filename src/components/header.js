@@ -8,7 +8,7 @@ const Header = ({ siteTitle, slug }) => {
       allDataYaml {
         edges {
           node {
-            meta_info {
+            meta {
               slug
             }
           }
@@ -47,8 +47,8 @@ const Header = ({ siteTitle, slug }) => {
       <div>
         {data.allDataYaml && data.allDataYaml.edges.map(({ node }, i) => (
           <div key={i} className="text-light">
-            <Link to={"/" + node.meta_info.slug}>
-              {node.meta_info.slug}
+            <Link to={"/" + node.meta.slug}>
+              {node.meta.slug}
             </Link>
           </div>
         ))}

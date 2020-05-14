@@ -1,7 +1,4 @@
 const path = require('path')
-const fs = require('fs')
-const YAML = require('yaml')
-const { createFilePath } = require(`gatsby-source-filesystem`)
 
 // exports.onCreateNode = ({ node, getNode, actions: { createNodeField } }) => {
 //     if (node.internal.type === 'DataYaml') {
@@ -17,7 +14,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
             allDataYaml {
                 edges {
                     node {
-                        meta_info {
+                        meta {
                             slug
                         }
                     }
@@ -28,7 +25,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
     if (result.errors) throw new Error(result.errors)
 
     result.data.allDataYaml.edges.forEach(({ node }) => {
-        const slug = node.meta_info.slug
+        const slug = node.meta.slug
 
         createPage({
             path: slug,

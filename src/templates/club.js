@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 export default ({ data: { dataYaml } }) => {
-    const meta = dataYaml.meta_info
+    const { meta } = dataYaml
 
     return (
 
@@ -39,8 +39,8 @@ export default ({ data: { dataYaml } }) => {
 
 export const query = graphql`
     query ClubQuery($slug: String!) {
-        dataYaml(meta_info: { slug: { eq: $slug }}) {  
-            meta_info {
+        dataYaml(meta: { slug: { eq: $slug }}) {  
+            meta {
                 slug
                 title
                 date
