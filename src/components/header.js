@@ -24,11 +24,12 @@ const Header = ({ siteTitle, slug }) => {
       //   backgroundImage: "url(" + "https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350" + ")",
       //   backgroundRepeat: 'repeat'
       // }}
-      style={{
+      style={slug ? {
         backgroundImage: `url(${require(`../images/${slug}_bg.png`)})`,
         backgroundRepeat: `repeat`
-        // background: `rebeccapurple`
-      }}
+      } : {
+          background: `rebeccapurple`
+        }}
     >
       <div>
         <h5 style={{ margin: 0 }}>
@@ -43,7 +44,7 @@ const Header = ({ siteTitle, slug }) => {
           </Link>
         </h5>
       </div>
-      <img src={require(`../images/${slug}_logo.png`)} alt={slug} />
+      {slug && <img src={require(`../images/${slug}_logo.png`)} alt={slug} />}
       <div>
         {data.allDataYaml && data.allDataYaml.edges.map(({ node }, i) => (
           <div key={i} className="text-light">
